@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNLbeauty — Nails ♡ Makeup</title>
+<meta name="description" content="BNLbeauty — unghii cu gel și machiaj. Programează-te pe Instagram sau WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF1F0;
+    --panel: #FFFFFF;
+    --ink: #4A2E30;
+    --ink-soft: #8A6E70;
+    --line: #F0D9DC;
+    --pink: #C9718A;
+    --pink-deep: #A8506B;
+    --pink-tint: #FBE9EE;
+    --gold: #B98358;
+    --max: 1040px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Poppins',sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .script{ font-family:'Dancing Script',cursive; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  a{ color:var(--pink-deep); }
+
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(251,241,240,0.94); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; padding:12px 0;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand img{ width:46px; height:46px; border-radius:50%; object-fit:cover; border:2px solid var(--pink); }
+  .brand span{ font-family:'Dancing Script',cursive; font-weight:700; font-size:26px; color:var(--pink-deep); }
+  nav{ display:flex; gap:22px; font-size:14.5px; font-weight:500; }
+  nav a{ color:var(--ink); text-decoration:none; }
+  nav a:hover{ color:var(--pink-deep); }
+  .cta-btn{
+    background:var(--pink); color:#fff !important; text-decoration:none;
+    font-weight:600; font-size:14.5px; padding:10px 20px; border-radius:30px;
+    white-space:nowrap;
+  }
+  .cta-btn:hover{ background:var(--pink-deep); }
+
+  .hero{ padding:60px 0 50px; text-align:center; }
+  .hero-logo{ width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #fff; box-shadow:0 10px 30px -12px rgba(168,80,107,0.45); margin-bottom:22px; }
+  .hero h1{ font-size:32px; margin:0 0 6px; font-weight:600; }
+  .hero h1 .script{ font-size:44px; color:var(--pink-deep); display:block; }
+  .hero p{ color:var(--ink-soft); max-width:460px; margin:14px auto 26px; font-size:16px; }
+  .hero-ctas{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-outline{
+    border:1.5px solid var(--pink); color:var(--pink-deep); text-decoration:none;
+    font-weight:600; font-size:14.5px; padding:10px 22px; border-radius:30px;
+  }
+  .btn-outline:hover{ background:var(--pink-tint); }
+
+  section{ padding:50px 0; }
+  .section-head{ text-align:center; margin-bottom:34px; }
+  .section-head .eyebrow{ font-family:'Dancing Script',cursive; font-size:22px; color:var(--pink-deep); }
+  .section-head h2{ font-size:24px; margin:2px 0 0; font-weight:600; }
+
+  .gallery{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+  }
+  .gallery a{
+    display:block; border-radius:16px; overflow:hidden; aspect-ratio: 3/4;
+    box-shadow:0 8px 20px -12px rgba(168,80,107,0.35); border:3px solid #fff;
+  }
+  .gallery img{ width:100%; height:100%; object-fit:cover; display:block; transition: transform .25s ease; }
+  .gallery a:hover img{ transform: scale(1.05); }
+
+  .services{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .service-card{
+    background:var(--panel); border-radius:18px; padding:30px 26px; text-align:center;
+    box-shadow:0 10px 26px -16px rgba(168,80,107,0.3);
+  }
+  .service-card .icon{
+    width:56px; height:56px; border-radius:50%; background:var(--pink-tint);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 14px;
+  }
+  .service-card .icon svg{ width:26px; height:26px; color:var(--pink-deep); }
+  .service-card h3{ font-size:19px; margin:0 0 8px; }
+  .service-card p{ color:var(--ink-soft); font-size:14.5px; margin:0; }
+
+  .contact{ text-align:center; }
+  .contact-buttons{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:22px; }
+  .ig-btn, .wa-btn{
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    font-weight:600; font-size:15px; padding:13px 24px; border-radius:30px; color:#fff;
+  }
+  .ig-btn{ background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); }
+  .wa-btn{ background:#25D366; }
+  .ig-btn svg, .wa-btn svg{ width:19px; height:19px; }
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0; text-align:center;
+    font-size:13px; color:var(--ink-soft);
+  }
+  footer .script{ color:var(--pink-deep); font-size:17px; }
+
+  @media (max-width:720px){
+    nav{ display:none; }
+    .gallery{ grid-template-columns: repeat(2, 1fr); }
+    .services{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <img src="logo.jpg" alt="Sigla BNLbeauty">
+      <span>BNLbeauty</span>
+    </a>
+    <nav>
+      <a href="#galerie">Galerie</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cta-btn" href="https://www.instagram.com/19.bnl" target="_blank" rel="noopener">Programează-te</a>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="logo.jpg" alt="BNLbeauty">
+    <h1>Nails <span class="script">& Makeup</span></h1>
+    <p>Unghii cu gel și machiaj, făcute cu grijă și atenție la detalii — pentru orice ocazie, mică sau mare.</p>
+    <div class="hero-ctas">
+      <a class="cta-btn" href="https://www.instagram.com/19.bnl" target="_blank" rel="noopener">Scrie pe Instagram</a>
+      <a class="btn-outline" href="tel:0739430130">Sună: 0739 430 130</a>
+    </div>
+  </div>
+</div>
+
+<section id="galerie">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">o mică</div>
+      <h2>Galerie</h2>
+    </div>
+    <div class="gallery">
+      <a href="gallery1.jpg" target="_blank"><img src="gallery1.jpg" alt="Lucrare BNLbeauty"></a>
+      <a href="gallery2.jpg" target="_blank"><img src="gallery2.jpg" alt="Lucrare BNLbeauty"></a>
+      <a href="gallery3.jpg" target="_blank"><img src="gallery3.jpg" alt="Lucrare BNLbeauty"></a>
+      <a href="gallery4.jpg" target="_blank"><img src="gallery4.jpg" alt="Unghii cu gel BNLbeauty"></a>
+      <a href="gallery5.jpg" target="_blank"><img src="gallery5.jpg" alt="Unghii cu gel BNLbeauty"></a>
+    </div>
+  </div>
+</section>
+
+<section id="servicii">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ce facem</div>
+      <h2>Servicii</h2>
+    </div>
+    <div class="services">
+      <div class="service-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Unghii cu gel</h3>
+        <p>Manichiură cu gel, forme și lungimi la alegere, modele și decoruri personalizate.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h.01M16 12h.01M9 16c.7.7 1.8 1 3 1s2.3-.3 3-1"/></svg>
+        </div>
+        <h3>Machiaj</h3>
+        <p>Machiaj pentru evenimente, ședințe foto sau orice ocazie specială.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">hai să</div>
+      <h2>Ne programăm?</h2>
+    </div>
+    <p style="color:var(--ink-soft)">Scrie-ne pe Instagram sau sună direct pentru o programare.</p>
+    <div class="contact-buttons">
+      <a class="ig-btn" href="https://www.instagram.com/19.bnl" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.22-1.15 1.77-.55.55-1.11.89-1.77 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47-.66-.26-1.22-.6-1.77-1.15-.55-.55-.89-1.11-1.15-1.77-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77.55-.55 1.11-.89 1.77-1.15.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm5.4-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>
+        @19.bnl
+      </a>
+      <a class="wa-btn" href="tel:0739430130">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.2 2.4 3.2 4.4 5.6 5.6l1.9-1.9c.2-.2.6-.3.9-.2 1 .3 2.1.5 3.2.5.5 0 .9.4.9.9V19c0 .5-.4.9-.9.9C10.1 19.9 4.1 13.9 4.1 5.7c0-.5.4-.9.9-.9h3.3c.5 0 .9.4.9.9 0 1.1.2 2.2.5 3.2.1.3 0 .7-.2.9L6.6 10.8Z"/></svg>
+        0739 430 130
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="script">BNLbeauty</div>
+    Nails ♡ Makeup · 0739 430 130 · @19.bnl
+  </div>
+</footer>
+
+</body>
+</html>
